@@ -1,3 +1,4 @@
+from app.models.user import User
 from flask import blueprints
 from flask.app import Flask
 
@@ -17,6 +18,8 @@ def logout():
 
 @auth.route('/register')
 def register():
+    user = User(username='test', password='test', email='test@test')
+    user.save()
     return "register page"
 
 

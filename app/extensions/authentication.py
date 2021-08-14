@@ -13,7 +13,7 @@ def authenticate(username, password):
 
 def identity(payload):
     user_id = payload['identity']
-    return User.get(user_id)
+    return User.query.get(user_id)
 
 
 jwt = JWT(authentication_handler=authenticate, identity_handler=identity)
