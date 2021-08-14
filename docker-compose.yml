@@ -7,3 +7,5 @@ services:
       - "5000:5000"
     volumes:
       - ./app/:/dodo/app
+    env_file: .env
+    restart: always
