@@ -1,3 +1,4 @@
+from datetime import timedelta
 from os import getenv
 
 
@@ -5,6 +6,7 @@ class Config(object):
     """Main config object"""
     FLASK_ENV = getenv("FLASK_ENV", "development")
     SECRET_KEY = getenv("SECRET_KEY", "mysupersecretkey")
+    JWT_EXPIRATION_DELTA = timedelta(minutes=30)
 
 
 class DevelopmentConfig(Config):

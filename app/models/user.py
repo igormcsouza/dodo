@@ -13,6 +13,7 @@ class User(db.Model):
     created_at = db.Column(db.DateTime,
                            nullable=False,
                            default=datetime.utcnow)
+    doodoos = db.relationship('DooDoo', backref='users', lazy=True)
     password = db.Column(db.String(128))
 
     def save(self):
